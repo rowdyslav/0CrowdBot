@@ -5,9 +5,7 @@ import discord
 from discord.ext import commands
 
 
-# my_secret = os.environ['<secret_token>']
-my_secret = 'MTA5NzkwOTcxNzE5NzY1NjA4NA.GUSA\
-MZ.JB9_G2Fvwu5Es49_n_edOcwB2dmoTktTEgVKt4'
+my_secret = os.environ['<secret_token>']
 
 client = commands.Bot(command_prefix='0!', intents=discord.Intents.all())
 
