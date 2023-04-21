@@ -1,17 +1,17 @@
 # import discord
 from discord.ext import commands, tasks
+from format_letwork import format_letwork
 import asyncio
-import datetime
-import pytz
-from random import choice
+from datetime import datetime as dt
+from pytz import timezone
 
 
 # Создание класса Cog
 class LetWorksM(commands.Cog):
-    def __init__(self, client):
+    def _init_(self, client):
         self.client = client
         self.channel_id = 1092784583008854026
-        self.message_time = "13:58"
+        self.message_time = "7:00"
         self.letworks_task.start()
 
     @commands.Cog.listener()
@@ -25,14 +25,12 @@ class LetWorksM(commands.Cog):
     async def letworks_task(self):
         await self.client.wait_until_ready()
         while not self.client.is_closed():
-            now = datetime.datetime.now(
-                pytz.timezone('Europe/Moscow'))
+            now = dt.now(
+                timezone('Europe/Moscow'))
             if now.strftime("%H:%M") == self.message_time:
                 channel = self.client.get_channel(self.channel_id)
-                await channel.send(
-                        open('letworks.txt').read()
-                        ).replace('<date>', now.strftime("%d.%m.%Y")
-                                  .replace('<cit>', choice(open('cits.txt'))))
+                content = format_letwork()
+                await channel.send(content)
                 await asyncio.sleep(60)
 
     @letworks_task.before_loop

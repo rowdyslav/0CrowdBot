@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 
 
-my_secret = os.environ['<secret_token>']
+token = os.environ['0CrowdBot']
 
 client = commands.Bot(command_prefix='0!', intents=discord.Intents.all())
 
@@ -21,7 +21,7 @@ async def main():
     async with client:
         await load()
         # keep_alive()
-        await client.start(my_secret)
+        await client.start(token)
 
 
 @client.event
