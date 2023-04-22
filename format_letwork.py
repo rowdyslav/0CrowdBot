@@ -4,7 +4,7 @@ from random import choice
 from pathlib import Path
 
 weekdays = 'Понедельник Вторник Среда Четверг Пятница \
-Субботьа Воскресенье'.split()
+Суббота Воскресенье'.split()
 
 
 def format_letwork(wday=0):
