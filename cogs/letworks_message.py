@@ -11,7 +11,7 @@ class LetWorksM(commands.Cog):
     def _init_(self, client):
         self.client = client
         self.channel_id = 1092784583008854026
-        self.message_time = "7:00"
+        self.message_time = "07:00"
         self.letworks_task.start()
 
     @commands.Cog.listener()
