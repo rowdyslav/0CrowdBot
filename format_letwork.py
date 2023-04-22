@@ -15,11 +15,11 @@ def format_letwork(wday=0):
         letwork = letworks[0] if day_index not in [5, 6] else letworks[1]
     with open(Path('texts', 'cits.txt'), 'r', encoding='UTF-8') as cits:
         cits = cits.readlines()
-        cit = choice([cits[x] for x in range(0, len(cits), 3)])
+        cit = choice([cits[x] for x in range(0, len(cits), 2)])
         author = cits[cits.index(cit) + 1]
     content = letwork.replace('<date>', now.strftime("%d.%m.%Y"))
     content = content.replace('<weekday>', weekdays[day_index])
-    content = content.replace('<cit>', cit[4:].strip())
+    content = content.replace('<cit>', cit[cit.find(' '):].strip())
     content = content.replace('<author>', author.strip())
     content = content.replace('\\n', '\n')
     return content
