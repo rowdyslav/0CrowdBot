@@ -6,11 +6,10 @@ from datetime import datetime as dt
 from pytz import timezone
 
 
-# Создание класса Cog
 class LetWorksM(commands.Cog):
-    def _init_(self, client):
+    def __init__(self, client):
         self.client = client
-        self.channel_id = 1092784583008854026
+        self.channel_id = 1081624019842908252
         self.message_time = "07:00"
         self.letworks_task.start()
 
@@ -29,7 +28,7 @@ class LetWorksM(commands.Cog):
                 timezone('Europe/Moscow'))
             if now.strftime("%H:%M") == self.message_time:
                 channel = self.client.get_channel(self.channel_id)
-                content = format_letwork()
+                content = format_letwork(now.weekday())
                 await channel.send(content)
                 await asyncio.sleep(60)
 

@@ -13,8 +13,7 @@ class LetWorksC(commands.Cog):
 
     @commands.command()
     async def testlw(self, ctx, channel: discord.TextChannel, wday=0):
-        content = format_letwork(wday)
-        await channel.send(content) if channel else await ctx.send(content)
+        await channel.send(format_letwork(wday))
 
 
 async def setup(client):
