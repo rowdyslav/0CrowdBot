@@ -1,2 +1,9 @@
-/Clear.py
-/__pycache__
+*
+
+!.gitignore
+!bot.py
+!format_letwork.py
+!webserver.py
+!*/cogs/*
+!*/texts/*
+!README.md
