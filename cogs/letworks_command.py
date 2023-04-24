@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from format_letwork import format_letwork
+from datetime_funcs import format_letwork
 
 
 class LetWorksC(commands.Cog):
