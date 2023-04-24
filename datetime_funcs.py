@@ -28,4 +28,5 @@ def seconds_left():
     target = (now + timedelta(days=1)).replace(hour=7, minute=0, second=0,
                                                microsecond=0)
     diff = (target - now).total_seconds()
+    print(f'{target} - {now} = {diff}')
     return diff
