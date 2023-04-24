@@ -19,6 +19,7 @@ class LetWorksM(commands.Cog):
 
     @tasks.loop(seconds=1)
     async def letworks_task(self):
+        print('летворк таск сработал ща ждать будет')
         await asyncio.sleep(seconds_left())
         channel = self.client.get_channel(self.channel_id)
         content = format_letwork()
