@@ -1,5 +1,5 @@
 *
-*/cogs/__pycache__
+
 
 !.gitignore
 !bot.py
@@ -8,3 +8,6 @@
 !*/cogs/*
 !*/texts/*
 !README.md
+
+cogs/__pycache__/*
+cogs/__pycache__/*
