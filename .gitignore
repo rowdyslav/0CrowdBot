@@ -2,7 +2,7 @@
 
 !.gitignore
 !bot.py
-!format_letwork.py
+!datetime_funcs.py
 !webserver.py
 !*/cogs/*
 !*/texts/*
