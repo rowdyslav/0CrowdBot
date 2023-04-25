@@ -25,7 +25,7 @@ def format_letwork(wday=dt.now(timezone('Europe/Moscow')).weekday()):
 
 def seconds_left():
     now = dt.now(timezone('Europe/Moscow'))
-    target = now.replace(hour=15, minute=37, second=0, microsecond=0)
+    target = now.replace(hour=7, minute=0, second=0, microsecond=0)
     if target < now:  # если нужное время уже прошло сегодня
         target += timedelta(days=1)  # переходим на завтрашний день
     diff = (target - now).total_seconds()
