@@ -7,7 +7,8 @@ weekdays = 'Понедельник Вторник Среда Четверг Пя
 Суббота Воскресенье'.split()
 
 
-def format_letwork(wday=dt.now(timezone('Europe/Moscow')).weekday()):
+def format_letwork():
+    wday = dt.now(timezone('Europe/Moscow')).weekday()
     with open(Path('texts', 'letwork.txt'), 'r', encoding='UTF-8') as letwork:
         letworks = letwork.readlines()
         letwork = letworks[0] if wday not in [5, 6] else letworks[1]
@@ -29,5 +30,6 @@ def seconds_left():
     if target < now:  # если нужное время уже прошло сегодня
         target += timedelta(days=1)  # переходим на завтрашний день
     diff = (target - now).total_seconds()
-    print(f'{target} - {now} = {diff}')
+    print(f'{target} - {now} = {diff} секунд осталось')
+    print(f'Это сообщение отправится в нужное время в {weekdays[target.weekday()]}')
     return diff

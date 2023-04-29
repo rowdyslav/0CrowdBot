@@ -12,8 +12,8 @@ class LetWorksC(commands.Cog):
         print('Команда testlw работает!')
 
     @commands.command()
-    async def testlw(self, ctx, channel: discord.TextChannel, wday=0):
-        await channel.send(format_letwork(wday))
+    async def testlw(self, ctx, channel: discord.TextChannel):
+        await channel.send(format_letwork())
 
 
 async def setup(client):
