@@ -1,13 +1,13 @@
 import os
-from webserver import keep_alive
 import asyncio
+from webserver import keep_alive
 import discord
 from discord.ext import commands
 
 
-token = os.environ['0CrowdBot']
+token = os.environ['BearBot']
 
-client = commands.Bot(command_prefix='0!', intents=discord.Intents.all())
+client = commands.Bot(command_prefix='!!', intents=discord.Intents.all())
 
 
 async def load():
@@ -26,10 +26,10 @@ async def main():
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game('Работает в 0Crowd!'))
+    await client.change_presence()
     print('Бот работает!')
 
 
 asyncio.run(main())
 
-# https://discord.com/api/oauth2/authorize?client_id=1097909717197656084&permissions=8&scope=bot
+# https://discord.com/api/oauth2/authorize?client_id=1104397332151279689&permissions=8&scope=bot
