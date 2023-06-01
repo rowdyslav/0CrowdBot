@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 
 
-token = os.environ['BearBot']
+token = os.environ['0crowdBot']
 
 client = commands.Bot(command_prefix='!!', intents=discord.Intents.all())
 
